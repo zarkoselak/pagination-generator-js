@@ -1,14 +1,31 @@
 {
   "name": "pagination-generator-js",
   "version": "1.0.0",
-  "description": "Generates pagination base on 2 params total count of elements and number of elements per page",
+  "description": "Generates pagination based on 2 params -> total number of elements and number of elements per page",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node --presets es2015 src/index.js",
+    "build": "webpack --config webpack.config.babel.js"
+  },
+  "homepage": "https://github.com/zarkoselak/pagination-generator-js/blob/master/README.md",
+  "repository": {
+    "url": "https://github.com/zarkoselak/pagination-generator-js",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/zarkoselak/pagination-generator-js/issues"
   },
   "keywords": [
     "pagination"
   ],
   "author": "Zarko Selak <selak.zarko@icloud.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-loader": "^6.2.10",
+    "babel-polyfill": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "webpack": "^2.2.1"
+  }
 }
