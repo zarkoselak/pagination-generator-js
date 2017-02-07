@@ -1,0 +1,8 @@
+#Mac generated files
+DS_Store
+
+#Build generated files
+dist
+
+#Node modules
+node_modules
