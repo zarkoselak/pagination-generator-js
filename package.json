@@ -1,0 +1,14 @@
+{
+  "name": "pagination-generator-js",
+  "version": "1.0.0",
+  "description": "Generates pagination base on 2 params total count of elements and number of elements per page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pagination"
+  ],
+  "author": "Zarko Selak <selak.zarko@icloud.com>",
+  "license": "MIT"
+}
