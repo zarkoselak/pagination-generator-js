@@ -6,3 +6,6 @@ dist
 
 #Node modules
 node_modules
+
+#Npm generated files
+npm-debug.log
