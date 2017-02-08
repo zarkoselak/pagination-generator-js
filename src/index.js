@@ -6,21 +6,26 @@
  * @return {Array}      Pagination array
  */
 export const pagination = (data) => {
-  const { total, page, selected = 1}  = data;
-  const pages = Math.ceil(total/page);
+  const { total, perPage, current = 1}  = data;
+  const pages = Math.ceil(total/perPage);
 
-  return generatePagination(pages, selected);
+  if(isNaN(total)) throw new Error('Total param should be number');
+  if(isNaN(perPage)) throw new Error('perPage param should be number');
+
+  let pagination = generatePagination(pages, current);
+
+  return pagination;
 };
 
 /**
  * Adds separator
- * @param {Number} selected current page
+ * @param {Number} current current page
  * @param {Number} page     first or last page
  * @param {Number} offset   left or right offset from current page
  */
-const addSeparator = (selected, page, offset) => {
+const addSeparator = (current, page, offset) => {
   const separator = `...`;
-  return Math.abs(page - selected) > offset ? separator : null;
+  return Math.abs(page - current) > offset ? separator : null;
 }
 
 /**
@@ -28,29 +33,29 @@ const addSeparator = (selected, page, offset) => {
  * @param  {Number} pages number of total pages
  * @return {Array}        pagination array
  */
-const generatePagination = (pages, selected) => {
+const generatePagination = (pages, current) => {
   const maxNumberOfElements = 5;
   const firstPage           = 1;
   const lastPage            = pages;
   const offset              = Math.ceil(maxNumberOfElements / 2);
-  const offsetLeft          = [...Array(offset).keys()].map((value, index) => Math.abs(value - selected) <= firstPage || Math.abs(value - selected) === selected ? null : Math.abs(value - selected)).reverse();
-  const offsetRight         = [...Array(offset).keys()].map((value, index) => (selected + value) >= lastPage || (selected + value) === selected ? null : (selected + value));
+  const offsetLeft          = [...Array(offset).keys()].map((value, index) => Math.abs(value - current) <= firstPage || Math.abs(value - current) === current ? null : Math.abs(value - current)).reverse();
+  const offsetRight         = [...Array(offset).keys()].map((value, index) => (current + value) >= lastPage || (current + value) === current ? null : (current + value));
 
   let pagination = [
     firstPage,
-    addSeparator(selected, firstPage, offset),
+    addSeparator(current, firstPage, offset),
     ...offsetLeft,
-    selected !== firstPage && selected !== lastPage ? selected: null,
+    current !== firstPage && current !== lastPage ? current: null,
     ...offsetRight,
-    addSeparator(selected, lastPage, offset),
+    addSeparator(current, lastPage, offset),
     lastPage
   ];
 
   return pagination.filter(item => item !== null)
   .map((item, index, items) => {
     return {
-      page: item,
-      isSelected: item === selected
+      value: item,
+      isSelected: item === current
     };
   });
 };

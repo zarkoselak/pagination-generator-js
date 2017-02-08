@@ -4,6 +4,7 @@
   "description": "Generates pagination based on 2 params -> total number of elements and number of elements per page",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
     "start": "babel-node --presets es2015 src/index.js",
     "build": "webpack --config webpack.config.babel.js"
   },
@@ -22,11 +23,13 @@
   "license": "MIT",
   "devDependencies": {
     "babel-cli": "^6.22.2",
+    "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-object-rest-spread": "^6.22.0",
     "babel-polyfill": "^6.22.0",
     "babel-preset-es2015": "^6.22.0",
     "babel-register": "^6.22.0",
+    "jest": "^18.1.0",
     "webpack": "^2.2.1"
   }
 }
