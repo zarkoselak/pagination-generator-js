@@ -1,11 +1,17 @@
 'use strict';
 
+let data = {
+  total: 480,
+  page: 20,
+  selected: 18
+};
+
 /**
  * Generates pagination Array
  * @param  {Object} data Object with number of total elements, elements per page and current page
  * @return {Array}      Pagination array
  */
-export const generate = (data) => {
+export const pagination = (data) => {
   const { total, page, selected = 1}  = data;
   const pages = Math.ceil(total/page);
 
@@ -55,3 +61,7 @@ const generatePagination = (pages, selected) => {
     };
   });
 };
+
+let test = pagination(data);
+
+console.log(test);
