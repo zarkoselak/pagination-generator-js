@@ -1,11 +1,5 @@
 'use strict';
 
-let data = {
-  total: 480,
-  page: 20,
-  selected: 18
-};
-
 /**
  * Generates pagination Array
  * @param  {Object} data Object with number of total elements, elements per page and current page
@@ -17,7 +11,6 @@ export const pagination = (data) => {
 
   return generatePagination(pages, selected);
 };
-
 
 /**
  * Adds separator
@@ -61,7 +54,3 @@ const generatePagination = (pages, selected) => {
     };
   });
 };
-
-let test = pagination(data);
-
-console.log(test);
