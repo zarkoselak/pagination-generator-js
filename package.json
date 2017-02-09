@@ -2,11 +2,12 @@
   "name": "pagination-generator-js",
   "version": "1.0.0",
   "description": "Generates pagination based on 2 params -> total number of elements and number of elements per page",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "test": "jest",
     "start": "babel-node --presets es2015 src/index.js",
-    "build": "webpack --config webpack.config.babel.js"
+    "build": "webpack --config webpack.config.babel.js",
+    "prepublish": "npm run build"
   },
   "homepage": "https://github.com/zarkoselak/pagination-generator-js/blob/master/README.md",
   "repository": {

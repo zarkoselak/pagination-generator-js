@@ -9,7 +9,7 @@ Generates pagination based on total number of elements and number of elements pe
 
 ```javascript
 
-import pagination from 'pagination-generator-js';
+import { pagination } from 'pagination-generator-js';
 
 let data = {
   total: 480,
