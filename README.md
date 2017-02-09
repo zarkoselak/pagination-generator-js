@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zarkoselak/pagination-generator-js.svg?branch=master)](https://travis-ci.org/zarkoselak/pagination-generator-js)
+
 #PAGINATION GENERATOR
 
 Generates pagination based on total number of elements and number of elements per page.
