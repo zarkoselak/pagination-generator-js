@@ -32,3 +32,7 @@ let paginationArray = pagination(data);
 // ]
 
 ```
+
+## License
+
+MIT 
